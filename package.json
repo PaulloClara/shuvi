@@ -1,0 +1,12 @@
+{
+  "name": "shuvi",
+  "version": "1.0.0",
+  "description": "Shuvi <3",
+  "main": "./src/main.js",
+  "repository": "https://github.com/paulloclara/shuvi",
+  "author": "paulloclara <paulloclara@gmail.com>",
+  "scripts": {
+    "start": "node ."
+  },
+  "license": "MIT"
+}
