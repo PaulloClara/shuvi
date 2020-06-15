@@ -6,10 +6,12 @@
   "repository": "https://github.com/paulloclara/shuvi",
   "author": "paulloclara <paulloclara@gmail.com>",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dev": "nodemon ."
   },
   "devDependencies": {
-    "electron": "^9.0.4"
+    "electron": "^9.0.4",
+    "nodemon": "^2.0.4"
   },
   "license": "MIT"
 }
