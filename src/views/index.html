@@ -6,10 +6,62 @@
       http-equiv="Content-Security-Policy"
       content="script-src 'self' 'unsafe-inline';"
     />
+    <link rel="stylesheet" href="styles.css" />
 
     <title>Shuvi</title>
   </head>
   <body>
-    <h1>Hi!</h1>
+    <header class="appbar">
+      <div class="left">
+        <button class="button icon">
+          <img class="image arrow" src="../assets/arrow.png" />
+        </button>
+
+        <img class="image profile" src="../assets/profile.png" />
+
+        <div class="user">
+          <h1 class="name">Shuvi</h1>
+          <p class="status">Online</p>
+        </div>
+      </div>
+
+      <div class="right">
+        <button class="button icon">
+          <img class="image phone" src="../assets/phone.png" />
+        </button>
+        <button class="button icon">
+          <img class="image search" src="../assets/search.png" />
+        </button>
+        <button class="button icon">
+          <img class="image menu" src="../assets/menu.png" />
+        </button>
+      </div>
+    </header>
+
+    <main class="messages"></main>
+
+    <footer class="footerbar">
+      <button class="button icon">
+        <img class="image clip" src="../assets/clip.png" />
+      </button>
+
+      <form class="form" onsubmit="controller.handleSendMessage(event, this)">
+        <input class="input" placeholder="Diga algo..." autofocus />
+
+        <button class="button icon">
+          <img class="image emoji" src="../assets/emoji.png" />
+        </button>
+
+        <button class="button icon hide" type="submit">
+          <img class="image send" src="../assets/send.png" />
+        </button>
+
+        <button class="button icon">
+          <img class="image mic" src="../assets/mic.png" />
+        </button>
+      </form>
+    </footer>
+
+    <script src="../controllers/index.js" charset="utf-8"></script>
   </body>
 </html>

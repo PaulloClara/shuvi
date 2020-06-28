@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+:root {
+  --text: #fff;
+  --success: #0f0;
+  --background: #2c2c2f;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.button.hide {
+  width: 0;
+  height: 0;
+
+  overflow: hidden;
+}
+
+.icon {
+  border: none;
+  outline: none;
+
+  background-color: var(--background);
+}
+
+.icon > .image {
+  filter: invert(54%);
+}
+
+.appbar {
+  display: flex;
+  justify-content: space-between;
+
+  /* position: fixed; */
+
+  width: 100%;
+  padding: 6px 12px;
+
+  background-color: var(--background);
+}
+
+.appbar .left,
+.appbar .right {
+  display: flex;
+}
+
+.appbar .button {
+  padding: 4px 12px;
+}
+
+.appbar .icon .image {
+  height: 28px;
+}
+
+.appbar .icon .arrow {
+  margin-right: 4px;
+}
+
+.appbar .left .profile {
+  width: 54px;
+  height: 54px;
+}
+
+.appbar .left .user {
+  margin-left: 16px;
+}
+
+.appbar .left .user .name {
+  color: var(--text);
+}
+
+.appbar .left .user .status {
+  color: var(--success);
+}
+
+.messages {
+  height: calc(100% - 67px - 61px);
+  overflow-y: scroll;
+
+  background-image: url(../assets/background.png);
+  background-color: var(--background);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.footerbar {
+  display: flex;
+  /* position: fixed; */
+
+  width: 100%;
+  /* bottom: 0; */
+
+  padding: 8px 16px;
+
+  background-color: var(--background);
+}
+
+.footerbar .button {
+  padding: 4px 6px;
+}
+
+.footerbar .icon .image {
+  height: 34px;
+}
+
+.footerbar .form {
+  display: flex;
+  width: 100%;
+}
+
+.footerbar .form .input {
+  width: 100%;
+  padding: 8px 4px;
+
+  border: none;
+  outline: none;
+
+  color: var(--text);
+  font-size: 18px;
+
+  background-color: var(--background);
+}
+
+.footerbar .form .image.send {
+  height: 42px;
+}
