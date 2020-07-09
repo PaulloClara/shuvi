@@ -1,0 +1,24 @@
+[is="wc-icon"] {
+  cursor: pointer;
+
+  border: none;
+  outline: none;
+
+  background-color: var(--background);
+}
+
+[is="wc-icon"].hidden {
+  width: 0;
+  height: 0;
+
+  overflow: hidden;
+}
+
+[is="wc-icon"] img {
+  height: 28px;
+  filter: invert(54%);
+}
+
+[is="wc-icon"][name="send"] img {
+  filter: invert(0%);
+}

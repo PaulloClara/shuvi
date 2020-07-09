@@ -4,47 +4,39 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 :root {
   --text: #fff;
   --success: #0f0;
   --background: #2c2c2f;
 }
 
-.button {
-  cursor: pointer;
-}
-
-.button.hide {
-  width: 0;
-  height: 0;
-
+html,
+body {
+  height: 100%;
   overflow: hidden;
 }
 
-.icon {
-  border: none;
-  outline: none;
+body {
+  opacity: 1;
+  transition: opacity 0.4s linear;
 
   background-color: var(--background);
 }
 
-.icon > .image {
-  filter: invert(54%);
+body.hidden {
+  opacity: 0;
 }
 
 .appbar {
   display: flex;
   justify-content: space-between;
 
-  /* position: fixed; */
-
   width: 100%;
+  height: 70px;
+  max-height: 70px;
+
   padding: 6px 12px;
+  border-bottom: 1px solid #000;
 
   background-color: var(--background);
 }
@@ -54,15 +46,11 @@ body {
   display: flex;
 }
 
-.appbar .button {
+.appbar [is="wc-icon"] {
   padding: 4px 12px;
 }
 
-.appbar .icon .image {
-  height: 28px;
-}
-
-.appbar .icon .arrow {
+.appbar [is="wc-icon"] .arrow {
   margin-right: 4px;
 }
 
@@ -84,32 +72,48 @@ body {
 }
 
 .messages {
-  height: calc(100% - 67px - 61px);
+  height: calc(100% - 140px);
+  padding: 6px 12px;
+
   overflow-y: scroll;
 
-  background-image: url(../assets/background.png);
   background-color: var(--background);
+  background-image: url(../assets/background.png);
   background-repeat: no-repeat;
   background-position: center;
 }
 
+.messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages::-webkit-scrollbar-track {
+  background-color: var(--background);
+}
+
+.messages::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #6666669f;
+}
+
 .footerbar {
   display: flex;
-  /* position: fixed; */
 
   width: 100%;
-  /* bottom: 0; */
+  height: 70px;
+  max-height: 70px;
 
   padding: 8px 16px;
+  border-top: 1px solid #000;
 
   background-color: var(--background);
 }
 
-.footerbar .button {
+.footerbar [is="wc-icon"] {
   padding: 4px 6px;
 }
 
-.footerbar .icon .image {
+.footerbar [is="wc-icon"] img {
   height: 34px;
 }
 
@@ -129,8 +133,4 @@ body {
   font-size: 18px;
 
   background-color: var(--background);
-}
-
-.footerbar .form .image.send {
-  height: 42px;
 }

@@ -1,30 +1,42 @@
 const { join: resolvePath } = require("path");
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 
-const windows = {};
-const isDevMode = process.env.NODE_ENV === "development";
+process.app = {};
+process.windows = {};
+
+process.app.srcPath = __dirname;
+process.app.isDevMode = process.env.NODE_ENV === "development";
+process.app.openDevTools =
+  process.app.isDevMode || process.argv.includes("--dev-tools");
 
 class AppWindow extends BrowserWindow {
   constructor() {
     super({
-      width: isDevMode ? 800 : 480,
+      width: process.app.openDevTools ? 800 : 480,
       height: 720,
+      minWidth: 420,
+      minHeight: 600,
       autoHideMenuBar: true,
+      icon: resolvePath(process.app.srcPath, "assets", "profile.png"),
       webPreferences: {
         nodeIntegration: true
       }
     });
 
-    this.loadFile(resolvePath(__dirname, "views", "index.html"));
+    this.loadFile(resolvePath(process.app.srcPath, "views", "index.html"));
 
-    if (isDevMode) this.webContents.openDevTools();
+    if (process.app.openDevTools) this.webContents.openDevTools();
   }
 }
 
 app.on("ready", () => {
-  windows.main = new AppWindow();
+  process.windows.main = new AppWindow();
 });
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
+});
+
+ipcMain.on("init", function(event) {
+  event.returnValue = JSON.stringify(process.app);
 });

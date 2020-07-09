@@ -1,0 +1,29 @@
+[is="wc-message"] {
+  padding: 6px 12px;
+  border-radius: 8px;
+
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  clear: both;
+  max-width: 80%;
+  word-break: break-all;
+
+  line-height: 1.4rem;
+  text-shadow: 2px 2px 1px #000;
+}
+
+[is="wc-message"].shuvi {
+  float: left;
+  background-color: #000c;
+}
+
+[is="wc-message"].user {
+  float: right;
+  background-color: #005c;
+}
+
+[is="wc-message"] + [is="wc-message"] {
+  margin-top: 6px;
+}
