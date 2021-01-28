@@ -10,7 +10,7 @@
     "dev": "NODE_ENV=development nodemon ."
   },
   "devDependencies": {
-    "electron": "^9.0.4",
+    "electron": "^9.4.0",
     "nodemon": "^2.0.4"
   },
   "license": "MIT"
